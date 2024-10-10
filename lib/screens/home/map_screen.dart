@@ -130,7 +130,7 @@ class _MapScreenState extends State<MapScreen> {
                 ),
                 Positioned(
                   right: 10,
-                  top: 10,
+                  bottom: 150,
                   child: Column(
                     children: [
                       MyLocationButton(controller: _controller),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:oqyul/constants/styles.dart';
 import 'package:oqyul/services/ad_service.dart';
 import 'package:provider/provider.dart';
 import '../blocs/premium/premium_bloc.dart';
@@ -92,13 +93,15 @@ class UpdateDatabaseButton extends StatelessWidget {
         }
 
         return Container(
+          padding: EdgeInsets.symmetric(vertical: 12, horizontal: 10),
           width: double.infinity,
           child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.white,
-              backgroundColor: buttonColor,
-              padding: EdgeInsets.symmetric(vertical: 12),
-            ),
+            style: AppStyles.primaryButton,
+            // style: ElevatedButton.styleFrom(
+            //   foregroundColor: Colors.white,
+            //   backgroundColor: buttonColor,
+            //   padding: EdgeInsets.symmetric(vertical: 12),
+            // ),
             onPressed: () {
               if (state is PremiumActive) {
 

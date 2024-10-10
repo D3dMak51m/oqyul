@@ -24,8 +24,8 @@ class MyLocationButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      icon: Icon(Icons.my_location, color: Colors.white),
+    return FloatingActionButton(
+      child: Icon(Icons.my_location, color: Colors.white),
       onPressed: _goToMyLocation,
       tooltip: 'Мое местоположение',
     );

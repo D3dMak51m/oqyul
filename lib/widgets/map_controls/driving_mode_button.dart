@@ -12,8 +12,8 @@ class DrivingModeButton extends StatelessWidget {
           isDrivingMode = state.isDrivingMode;
         }
 
-        return IconButton(
-          icon: Icon(
+        return FloatingActionButton(
+          child: Icon(
             isDrivingMode ? Icons.drive_eta : Icons.map,
             color: Colors.white,
           ),

@@ -9,8 +9,8 @@ class VoiceToggleButton extends StatelessWidget {
       builder: (context, state) {
         bool isVoiceOn = state.isVoiceOn;
 
-        return IconButton(
-          icon: Icon(
+        return FloatingActionButton(
+          child: Icon(
             isVoiceOn ? Icons.volume_up : Icons.volume_off,
             color: Colors.white,
           ),
