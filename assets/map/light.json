@@ -1,0 +1,20 @@
+[
+  {
+    "featureType": "all",
+    "elementType": "all",
+    "stylers": [
+      {
+        "saturation": 10
+      },
+      {
+        "lightness": 30
+      },
+      {
+        "gamma": 0.5
+      },
+      {
+        "hue": "#435158"
+      }
+    ]
+  }
+]

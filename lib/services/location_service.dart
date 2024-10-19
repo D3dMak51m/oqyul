@@ -1,64 +1,56 @@
-import 'dart:async';
-import 'package:geolocator/geolocator.dart';
+// lib/services/location_service.dart
 
+import 'package:location/location.dart';
+
+/// Сервис для работы с местоположением пользователя
 class LocationService {
-  static final LocationService _instance = LocationService._internal();
-  factory LocationService() => _instance;
-  LocationService._internal();
+  final Location _location = Location();
 
-  StreamSubscription<Position>? _positionStreamSubscription;
-  StreamController<Position> _positionController = StreamController<Position>.broadcast();
+  /// Проверка и запрос разрешений на доступ к местоположению
+  Future<bool> _requestPermission() async {
+    bool serviceEnabled;
+    PermissionStatus permissionGranted;
 
-  // Запрос разрешений на доступ к геолокации
-  Future<bool> checkPermissions() async {
-    LocationPermission permission = await Geolocator.checkPermission();
-
-    if (permission == LocationPermission.deniedForever) {
-      return false;
-    }
-
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-
-      if (permission == LocationPermission.denied || permission == LocationPermission.deniedForever) {
-        return false;
+    // Проверяем, включена ли служба местоположения
+    serviceEnabled = await _location.serviceEnabled();
+    if (!serviceEnabled) {
+      serviceEnabled = await _location.requestService();
+      if (!serviceEnabled) {
+        return false; // Если служба местоположения не включена
       }
     }
 
-    return true;
+    // Проверяем, предоставлено ли разрешение на доступ к местоположению
+    permissionGranted = await _location.hasPermission();
+    if (permissionGranted == PermissionStatus.denied) {
+      permissionGranted = await _location.requestPermission();
+      if (permissionGranted != PermissionStatus.granted) {
+        return false; // Если разрешение не предоставлено
+      }
+    }
+
+    return true; // Все разрешения предоставлены, служба включена
   }
 
-  // Получение текущего местоположения
-  Future<Position> getCurrentPosition() async {
-    return await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+  /// Получение текущего местоположения пользователя
+  Future<LocationData?> getUserLocation() async {
+    bool permissionGranted = await _requestPermission();
+    if (!permissionGranted) {
+      print('Нет доступа к службе местоположения');
+      return null;
+    }
+
+    try {
+      final locationData = await _location.getLocation();
+      return locationData;
+    } catch (e) {
+      print('Ошибка при получении местоположения: $e');
+      return null;
+    }
   }
 
-  // Начало отслеживания местоположения
-  void startLocationUpdates() {
-    LocationSettings locationSettings = LocationSettings(
-      accuracy: LocationAccuracy.best,
-      distanceFilter: 10, // Обновление каждые 10 метров
-    );
-
-    _positionStreamSubscription = Geolocator.getPositionStream(
-      locationSettings: locationSettings,
-    ).listen((Position position) {
-      _positionController.add(position);
-    });
-  }
-
-  // Остановка отслеживания местоположения
-  void stopLocationUpdates() {
-    _positionStreamSubscription?.cancel();
-    _positionStreamSubscription = null;
-  }
-
-  // Получение потока данных местоположения
-  Stream<Position> get positionStream => _positionController.stream;
-
-  // Освобождение ресурсов
-  void dispose() {
-    _positionStreamSubscription?.cancel();
-    _positionController.close();
+  /// Подписка на изменения местоположения (используется в режиме Drive Mode)
+  Stream<LocationData> getLocationStream() {
+    return _location.onLocationChanged;
   }
 }

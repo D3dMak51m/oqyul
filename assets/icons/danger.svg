@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:grid x="0" y="0" width="11.32" height="10.487"/>
+  </defs>
+  <g id="SVGRepo_bgCarrier" stroke-width="0" transform="matrix(9.274148, 0, 0, 9.913352, 305.636353, 119.840912)" style=""/>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.032" transform="matrix(9.274148, 0, 0, 9.913352, 305.636353, 119.840912)" style=""/>
+  <g transform="matrix(1, 0, 0, 1, -319.111572, 217.972076)"/>
+  <g id="g-1" stroke-width="0" transform="matrix(9.274148, 0, 0, 9.913352, 414.51709, 111.13604)" style=""/>
+  <g id="g-2" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.032" transform="matrix(9.274148, 0, 0, 9.913352, 414.51709, 111.13604)" style=""/>
+  <g transform="matrix(1, 0, 0, 1, 170.720718, -110.812874)">
+    <g id="g-3" stroke-width="0" transform="matrix(9.274148, 0, 0, 9.913352, 90.435181, 187.460907)" style=""/>
+    <g id="g-4" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.032" transform="matrix(9.274148, 0, 0, 9.913352, 90.435181, 187.460907)" style=""/>
+    <g transform="matrix(1, 0, 0, 1, -153.360443, -34.488884)">
+      <g id="SVGRepo_iconCarrier" transform="matrix(9.274148, 0, 0, 9.913352, 105.045441, 249.75)" style="">
+        <rect width="16" height="16" id="icon-bound" fill="none" style="stroke-width: 1.45928px; fill-rule: nonzero;"/>
+        <path d="M 8 0 C 4.688 0 2 2.688 2 6 C 2 12 8 16 8 16 C 8 16 14 12 14 6 C 14 2.688 11.312 0 8 0 Z" style="stroke-width: 1.45928px; fill-rule: nonzero;"/>
+      </g>
+      <g transform="matrix(0.188311, 0, 0, 0.237385, 148.70871, 251.62796)" style="">
+        <g id="g-5" stroke-width="0" transform="matrix(1.516296, 0, 0, 1.140736, -63.241081, 50.728992)" style=""/>
+        <g id="g-6" stroke-linecap="round" stroke-linejoin="round" transform="matrix(1.516296, 0, 0, 1.140736, -63.241081, 50.728992)" style=""/>
+        <g id="g-7" transform="matrix(1.516296, 0, 0, 1.140736, -63.241081, 50.728992)" style="">
+          <g>
+            <path d="M147.714,0C66.264,0,0,66.264,0,147.714s66.264,147.714,147.714,147.714s147.714-66.264,147.714-147.714 S229.164,0,147.714,0z M147.714,265.428C82.807,265.428,30,212.621,30,147.714S82.807,30,147.714,30 s117.714,52.807,117.714,117.714S212.621,265.428,147.714,265.428z" style="fill: rgb(255, 255, 255);"/>
+            <path d="M147.714,61.68c-8.284,0-15,6.716-15,15v79c0,8.284,6.716,15,15,15s15-6.716,15-15v-79 C162.714,68.396,155.998,61.68,147.714,61.68z" style="fill: rgb(255, 255, 255);"/>
+            <circle cx="147.714" cy="217.68" r="15" style="fill: rgb(255, 255, 255);"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

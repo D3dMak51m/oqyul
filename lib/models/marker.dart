@@ -1,35 +1,23 @@
 // lib/models/marker.dart
-class Marker {
-  final int id;
+class CustomMarker {
+  final String id;
   final double latitude;
   final double longitude;
   final int cameraType;
-  final DateTime createdOn;
-  final DateTime? updatedOn;
-  final DateTime? deletedOn;
-  final bool isActive;
 
-  Marker({
+  CustomMarker({
     required this.id,
     required this.latitude,
     required this.longitude,
     required this.cameraType,
-    required this.createdOn,
-    this.updatedOn,
-    this.deletedOn,
-    required this.isActive,
   });
 
-  factory Marker.fromJson(Map<String, dynamic> json) {
-    return Marker(
-      id: json['id'] as int,
+  factory CustomMarker.fromJson(Map<String, dynamic> json) {
+    return CustomMarker(
+      id: json['id'].toString(),
       latitude: (json['latitude'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
       cameraType: json['cameraType'] as int,
-      createdOn: DateTime.parse(json['createdOn'] as String),
-      updatedOn: json['updatedOn'] != null ? DateTime.parse(json['updatedOn'] as String) : null,
-      deletedOn: json['deletedOn'] != null ? DateTime.parse(json['deletedOn'] as String) : null,
-      isActive: json['isActive'] as bool,
     );
   }
 
@@ -39,10 +27,30 @@ class Marker {
       'latitude': latitude,
       'longitude': longitude,
       'cameraType': cameraType,
-      'createdOn': createdOn.toIso8601String(),
-      'updatedOn': updatedOn?.toIso8601String(),
-      'deletedOn': deletedOn?.toIso8601String(),
-      'isActive': isActive,
     };
+  }
+
+  @override
+  String toString() {
+    return 'Marker(id: $id, latitude: $latitude, longitude: $longitude, cameraType: $cameraType)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is CustomMarker &&
+        other.id == id &&
+        other.latitude == latitude &&
+        other.longitude == longitude &&
+        other.cameraType == cameraType;
+  }
+
+  @override
+  int get hashCode {
+    return id.hashCode ^
+    latitude.hashCode ^
+    longitude.hashCode ^
+    cameraType.hashCode;
   }
 }

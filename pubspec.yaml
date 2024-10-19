@@ -31,37 +31,37 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  flutter_bloc: ^8.0.1
-  equatable: ^2.0.3
-  http: ^0.13.4
-  google_maps_flutter: ^2.1.1
-  geolocator: ^13.0.1
+  # Карты Google
+  google_maps_flutter: ^2.7.1
+
+  # Riverpod для управления состоянием
+  flutter_riverpod: ^2.5.3
+
+  # HTTP-запросы
+  http: ^1.2.2
+
+  # Реклама Google AdMob
+  google_mobile_ads: ^5.2.0
+
+  # GPS местоположение
+  location: ^7.0.1
+
+  # Компас для Drive Mode
   flutter_compass: ^0.8.0
-  pin_code_fields: ^8.0.1
-  shared_preferences: ^2.0.15
-  intl: ^0.19.0
-  google_mobile_ads: ^1.0.1
+
+  # Воспроизведение аудио
   audioplayers: ^6.1.0
-  provider: ^6.0.3
-  geocoding: ^2.0.4
-  connectivity_plus: ^2.2.1
-  path_provider: ^2.0.11
-  flutter_localization: ^0.2.2
-#  firebase_analytics: ^11.3.3
-  permission_handler: ^9.2.0
-#  firebase_core: ^3.6.0
-#  firebase_messaging: ^15.1.3
-  intl_translation: ^0.20.0
-flutter_localizations:
-    sdk: flutter
 
+  # SVG иконки
+  flutter_svg: ^1.0.0
 
-#  smooth_compass: ^2.0.8
-#  flutter_compass: ^0.8.0
-#  sensors_plus: ^6.0.1
-#  flutter_qiblah: ^3.0.4
-#  flutter_compass_v2: ^1.0.3
-#  compassx: ^1.0.1
+  # Сохранение данных
+  shared_preferences: ^2.0.6
+  webview_flutter_android: ^3.16.9
+  webview_flutter: ^4.9.0
+#  google_maps_flutter: ^2.7.1
+#flutter_localizations:
+#    sdk: flutter
 
 dev_dependencies:
   flutter_test:
@@ -81,15 +81,20 @@ dev_dependencies:
 ## The following section is specific to Flutter packages.
 flutter:
   uses-material-design: true
-  generate: true
+#  generate: true
 
   assets:
-    - assets/data/markers.json
-    - assets/images/app_icon.png
-    - assets/images/splash_screen.png
+    - assets/icons/radar.svg
+    - assets/icons/camera.svg
+    - assets/icons/danger.svg
     - assets/sounds/500.mp3
     - assets/sounds/150.mp3
+    - assets/sounds/radar.mp3
     - assets/sounds/camera.mp3
+    - assets/sounds/danger.mp3
+    - assets/data/markers.json
+    - assets/map/dark.json
+    - assets/map/light.json
 
   fonts:
     - family: Roboto
