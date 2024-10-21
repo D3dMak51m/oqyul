@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:oqyul/viev_models/map_view_model.dart';
-// import '../view_models/map_view_model.dart';
 import '../utils/constants.dart';
 
 class MapWidget extends ConsumerWidget {

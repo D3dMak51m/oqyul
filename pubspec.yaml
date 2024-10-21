@@ -53,12 +53,14 @@ dependencies:
   audioplayers: ^6.1.0
 
   # SVG иконки
-  flutter_svg: ^1.0.0
+#  flutter_svg: ^1.0.3
 
   # Сохранение данных
   shared_preferences: ^2.0.6
   webview_flutter_android: ^3.16.9
   webview_flutter: ^4.9.0
+  flutter_svg: ^1.1.6
+#  vector_graphics: ^1.1.11+1
 #  google_maps_flutter: ^2.7.1
 #flutter_localizations:
 #    sdk: flutter

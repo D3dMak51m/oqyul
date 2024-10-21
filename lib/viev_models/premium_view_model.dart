@@ -15,7 +15,6 @@ class PremiumViewModel extends StateNotifier<PremiumStatus> {
     _loadPremiumStatus();
   }
 
-  /// Загрузка состояния премиум-режима из SharedPreferences
   Future<void> _loadPremiumStatus() async {
     final prefs = await SharedPreferences.getInstance();
     final isActive = prefs.getBool(SharedPreferencesKeys.isActive) ?? false;
@@ -27,16 +26,24 @@ class PremiumViewModel extends StateNotifier<PremiumStatus> {
       expirationTime = DateTime.tryParse(expirationTimeString);
     }
 
-    state = PremiumStatus(
-      isActive: isActive,
-      expirationTime: expirationTime,
-      remainingAdViews: remainingAdViews,
-    );
+    if (expirationTime != null && expirationTime.isBefore(DateTime.now())) {
+      state = PremiumStatus(
+        isActive: false,
+        expirationTime: null,
+        remainingAdViews: AppConstants.premiumActivationAdCount,
+      );
+      await _savePremiumStatus();
+    } else {
+      state = PremiumStatus(
+        isActive: isActive,
+        expirationTime: expirationTime,
+        remainingAdViews: remainingAdViews,
+      );
+    }
 
     _startExpirationTimer();
   }
 
-  /// Сохранение состояния премиум-режима в SharedPreferences
   Future<void> _savePremiumStatus() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(SharedPreferencesKeys.isActive, state.isActive);
@@ -44,27 +51,32 @@ class PremiumViewModel extends StateNotifier<PremiumStatus> {
     await prefs.setInt(SharedPreferencesKeys.remainingAdViews, state.remainingAdViews);
   }
 
-  /// Запуск таймера для отслеживания времени окончания премиум-режима
   void _startExpirationTimer() {
     _expirationTimer?.cancel();
-    if (state.isPremiumValid) {
+    if (state.isPremiumValid && state.expirationTime != null) {
       final duration = state.expirationTime!.difference(DateTime.now());
       _expirationTimer = Timer(duration, () {
-        state = state.copyWith(isActive: false, expirationTime: null);
+        state = state.copyWith(
+          isActive: false,
+          expirationTime: null,
+          remainingAdViews: AppConstants.premiumActivationAdCount,
+        );
         _savePremiumStatus();
       });
     }
   }
 
-  /// Активация премиум-режима на 16 часов после просмотра рекламы
   Future<void> activatePremium() async {
     final newExpirationTime = DateTime.now().add(AppConstants.premiumActivationDuration);
-    state = state.copyWith(isActive: true, expirationTime: newExpirationTime, remainingAdViews: 0);
+    state = state.copyWith(
+      isActive: true,
+      expirationTime: newExpirationTime,
+      remainingAdViews: 0,
+    );
     await _savePremiumStatus();
     _startExpirationTimer();
   }
 
-  /// Продление премиум-режима на 3 часа после просмотра рекламы
   Future<void> extendPremium() async {
     if (state.isPremiumValid) {
       final newExpirationTime = state.expirationTime!.add(AppConstants.premiumExtensionDuration);
@@ -74,7 +86,6 @@ class PremiumViewModel extends StateNotifier<PremiumStatus> {
     }
   }
 
-  /// Увеличение счетчика оставшихся просмотров рекламы для активации премиум-режима
   Future<void> incrementAdViews() async {
     if (state.remainingAdViews > 0) {
       final newAdViews = state.remainingAdViews - 1;
@@ -84,10 +95,11 @@ class PremiumViewModel extends StateNotifier<PremiumStatus> {
       } else {
         await _savePremiumStatus();
       }
+    } else {
+      await activatePremium();
     }
   }
 
-  /// Показ рекламы для активации или продления премиум-режима
   void showAdForPremium({bool extend = false}) {
     _adsService.showInterstitialAd(onAdClosed: () async {
       if (extend) {
@@ -105,7 +117,6 @@ class PremiumViewModel extends StateNotifier<PremiumStatus> {
   }
 }
 
-/// Провайдер для управления премиум-режимом
 final premiumViewModelProvider = StateNotifierProvider<PremiumViewModel, PremiumStatus>(
       (ref) => PremiumViewModel(ref.read(adsServiceProvider)),
 );

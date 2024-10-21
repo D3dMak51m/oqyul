@@ -22,10 +22,8 @@ class PremiumButton extends ConsumerWidget {
       ),
       onPressed: () {
         if (premiumState.isPremiumValid) {
-          // Продление премиум-режима
           premiumViewModel.showAdForPremium(extend: true);
         } else {
-          // Активация премиум-режима
           premiumViewModel.showAdForPremium();
         }
       },
@@ -54,15 +52,12 @@ class PremiumButton extends ConsumerWidget {
     );
   }
 
-  /// Строит контент кнопки для неактивного премиум-режима
   Widget _buildPremiumInactiveContent(PremiumStatus premiumState) {
     return Text(
       'Нажмите для активации премиума (${premiumState.remainingAdViews}/5)',
       style: TextStyle(color: Colors.white),
     );
   }
-
-  /// Вычисляет оставшийся прогресс времени для CircularProgressIndicator
   double _getRemainingTimeProgress(PremiumStatus premiumState) {
     if (premiumState.expirationTime == null) return 0.0;
     final totalDuration = AppConstants.premiumActivationDuration.inSeconds;

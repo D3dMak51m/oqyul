@@ -1,5 +1,4 @@
 // lib/main.dart
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'viev_models/settings_view_model.dart';
@@ -14,7 +13,6 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final settings = ref.watch(settingsViewModelProvider);
-
     return MaterialApp(
       title: 'Map Navigation App',
       debugShowCheckedModeBanner: false,

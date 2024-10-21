@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_compass/flutter_compass.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:location/location.dart';
 import 'package:oqyul/viev_models/settings_view_model.dart';
 import 'dart:async';
 import '../models/marker.dart';
@@ -16,6 +17,7 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
   final LocationService _locationService;
   final Ref _ref;
   StreamSubscription<double?>? _compassSubscription;
+  StreamSubscription<LocationData>? _locationSubscription;
   GoogleMapController? _mapController;
   bool _isVoiceAlertEnabled = false;
   final AudioPlayer _audioPlayer = AudioPlayer();
@@ -23,15 +25,13 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
 
   MapViewModel(this._ref, this._locationService)
       : super(MapViewModelState.initial()) {
-    // _updateMarkers();
     loadMapStyle();
-    _subscribeToMarkerUpdates();  // Подписка на изменения маркеров
+    _subscribeToMarkerUpdates();
   }
 
   void _subscribeToMarkerUpdates() {
-    // Подписываемся на изменения в markerProvider
     _ref.listen<List<CustomMarker>>(markerProvider, (previous, next) {
-      _updateMarkers(next);  // Обновляем маркеры при изменении состояния
+      _updateMarkers(next);
     });
   }
 
@@ -118,7 +118,6 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
 
   void onMapCreated(GoogleMapController controller) {
     _mapController = controller;
-    // _updateMarkers();
     centerMapOnUserLocation();
   }
 
@@ -130,6 +129,7 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
     }
   }
 
+// Постоянное обновление местоположения пользователя в режиме Drive Mode
   void _enableDriveMode() {
     _compassSubscription = _ref.read(compassProvider).listen((heading) {
       if (heading != null) {
@@ -143,11 +143,27 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
         ));
       }
     });
+
+    // Подписка на обновления местоположения
+    _locationSubscription = _locationService.getLocationStream().listen((newLocation) {
+      final LatLng position = LatLng(newLocation.latitude!, newLocation.longitude!);
+      _mapController?.animateCamera(CameraUpdate.newCameraPosition(
+        CameraPosition(
+          target: position,
+          zoom: AppConstants.driveModeMapZoom,
+          tilt: AppConstants.driveModeTilt,
+        ),
+      ));
+      state = state.copyWith(userLocation: position);
+    });
+
     state = state.copyWith(isDriveMode: true);
   }
 
+// Отключение режима Drive Mode
   void _disableDriveMode() {
     _compassSubscription?.cancel();
+    _locationSubscription?.cancel();  // Отменяем подписку на обновления местоположения
     _mapController?.animateCamera(CameraUpdate.newCameraPosition(
       CameraPosition(
         target: state.userLocation!,
@@ -155,9 +171,9 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
         tilt: AppConstants.defaultTilt,
       ),
     ));
-
     state = state.copyWith(isDriveMode: false);
   }
+
 
   Future<void> centerMapOnUserLocation() async {
     final userLocation = await _locationService.getUserLocation();
@@ -195,6 +211,7 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
   @override
   void dispose() {
     _compassSubscription?.cancel();
+    _locationSubscription?.cancel();
     _mapController?.dispose();
     _alertTimer?.cancel();
     _audioPlayer.dispose();
