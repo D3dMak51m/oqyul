@@ -58,6 +58,7 @@ class PremiumButton extends ConsumerWidget {
       style: TextStyle(color: Colors.white),
     );
   }
+
   double _getRemainingTimeProgress(PremiumStatus premiumState) {
     if (premiumState.expirationTime == null) return 0.0;
     final totalDuration = AppConstants.premiumActivationDuration.inSeconds;
