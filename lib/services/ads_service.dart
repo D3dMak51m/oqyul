@@ -20,8 +20,8 @@ class AdsService {
 
   void _loadBannerAd() {
     _bannerAd = BannerAd(
-      adUnitId: 'ca-app-pub-3677409032346147/2655089746', // Ваш Ad Unit ID
-      size: AdSize.banner,
+      adUnitId: 'ca-app-pub-3677409032346147/26*55089746',
+      size: AdSize.fullBanner,
       request: const AdRequest(),
       listener: BannerAdListener(
         onAdLoaded: (Ad ad) {
@@ -44,7 +44,7 @@ class AdsService {
 
     _isAdLoading = true;
     InterstitialAd.load(
-      adUnitId: 'ca-app-pub-3677409032346147/3968532801',
+      adUnitId: 'ca-app-pub-3940256099942544/5224354917',
       request: const AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (InterstitialAd ad) {

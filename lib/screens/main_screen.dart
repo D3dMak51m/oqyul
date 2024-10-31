@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oqyul/widgets/my_location_button.dart';
+import 'package:oqyul/widgets/nearest_marker_info_widget.dart';
 import 'package:oqyul/widgets/settings_button.dart';
 import '../widgets/map_widget.dart';
 import '../widgets/premium_button.dart';
@@ -22,6 +23,11 @@ class MainScreen extends ConsumerWidget {
         children: [
           MapWidget(), // Виджет карты Google Maps
           Positioned(
+            bottom: 160,
+            left: 16,
+            child: NearestMarkerInfoWidget(), // Добавляем виджет с информацией о ближайшем маркере
+          ),
+          Positioned(
             bottom: 80,
             left: 16,
             child: VoiceAlertButton(), // Кнопка голосового оповещения
@@ -36,9 +42,12 @@ class MainScreen extends ConsumerWidget {
             right: 16,
             child: MyLocationButton(), // Кнопка переключения режима карты
           ),
+          Positioned(
+            bottom: 0,
+            child: BannerAdWidget(), // Баннерная реклама
+          ),
         ],
       ),
-      bottomNavigationBar: BannerAdWidget(), // Добавляем баннерную рекламу внизу экрана
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }

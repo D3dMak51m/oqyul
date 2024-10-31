@@ -8,6 +8,9 @@ import 'utils/theme.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
+  List<String> testDeviceIds = ['588CCAFBCC44AA9A2276719D464ADA4A'];
+  RequestConfiguration configuration = RequestConfiguration(testDeviceIds: testDeviceIds);
+  MobileAds.instance.updateRequestConfiguration(configuration);
   runApp(ProviderScope(child: MyApp()));
 }
 

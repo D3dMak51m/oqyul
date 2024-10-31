@@ -116,6 +116,19 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
     return 12742 * asin(sqrt(a)) * 1000;
   }
 
+  // Обновленный метод для поиска ближайшего маркера и обновления состояния
+  void updateNearestMarker() {
+    if (state.userLocation == null) return;
+
+    final nearestMarker = findNearestMarker(state.userLocation!);
+    if (nearestMarker != null) {
+      final distance = calculateDistance(
+          state.userLocation!, LatLng(nearestMarker.latitude, nearestMarker.longitude));
+      state = state.copyWith(
+          nearestMarker: nearestMarker, distanceToNearestMarker: distance);
+    }
+  }
+
   void onMapCreated(GoogleMapController controller) {
     _mapController = controller;
     centerMapOnUserLocation();
@@ -147,6 +160,8 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
     // Подписка на обновления местоположения
     _locationSubscription = _locationService.getLocationStream().listen((newLocation) {
       final LatLng position = LatLng(newLocation.latitude!, newLocation.longitude!);
+      state = state.copyWith(userLocation: position);
+      updateNearestMarker();
       _mapController?.animateCamera(CameraUpdate.newCameraPosition(
         CameraPosition(
           target: position,
@@ -158,6 +173,18 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
     });
 
     state = state.copyWith(isDriveMode: true);
+  }
+
+  // Центрировать картцу маркере
+  void centerMapOnMarker(CustomMarker marker) {
+    final position = LatLng(marker.latitude, marker.longitude);
+    _mapController?.animateCamera(CameraUpdate.newCameraPosition(
+      CameraPosition(
+        target: position,
+        zoom: AppConstants.driveModeMapZoom,
+        tilt: AppConstants.driveModeTilt,
+      ),
+    ));
   }
 
 // Отключение режима Drive Mode
@@ -225,6 +252,8 @@ class MapViewModelState {
   final LatLng? userLocation;
   final Set<Marker> mapMarkers;
   final bool isDriveMode;
+  final CustomMarker? nearestMarker;
+  final double? distanceToNearestMarker;
 
   MapViewModelState({
     required this.mapStyle,
@@ -232,6 +261,8 @@ class MapViewModelState {
     required this.userLocation,
     required this.mapMarkers,
     required this.isDriveMode,
+    required this.nearestMarker,
+    required this.distanceToNearestMarker,
   });
 
   factory MapViewModelState.initial() {
@@ -241,6 +272,8 @@ class MapViewModelState {
       userLocation: null,
       mapMarkers: {},
       isDriveMode: false,
+      nearestMarker: null,
+      distanceToNearestMarker: null,
     );
   }
 
@@ -250,6 +283,8 @@ class MapViewModelState {
     LatLng? userLocation,
     Set<Marker>? mapMarkers,
     bool? isDriveMode,
+    CustomMarker? nearestMarker,
+    double? distanceToNearestMarker,
   }) {
     return MapViewModelState(
       mapStyle: mapStyle ?? this.mapStyle,
@@ -257,6 +292,8 @@ class MapViewModelState {
       userLocation: userLocation ?? this.userLocation,
       mapMarkers: mapMarkers ?? this.mapMarkers,
       isDriveMode: isDriveMode ?? this.isDriveMode,
+      nearestMarker: nearestMarker ?? this.nearestMarker,
+      distanceToNearestMarker: distanceToNearestMarker ?? this.distanceToNearestMarker,
     );
   }
 }

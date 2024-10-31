@@ -60,6 +60,7 @@ dependencies:
   webview_flutter_android: ^3.16.9
   webview_flutter: ^4.9.0
   flutter_svg: ^1.1.6
+  marquee: ^2.3.0
 #  vector_graphics: ^1.1.11+1
 #  google_maps_flutter: ^2.7.1
 #flutter_localizations:
