@@ -43,7 +43,7 @@ class NearestMarkerInfoWidget extends ConsumerWidget {
             ),
             const SizedBox(width: 8),
             Text(
-              'Type: ${marker.cameraType}, Distance: ${distance.toStringAsFixed(1)} m',
+              'Тип: ${marker.cameraType}, Дистанция: ${distance.toStringAsFixed(0)}м',
               style: TextStyle(fontSize: 14, color: Theme.of(context).textTheme.bodyLarge?.color),
             ),
           ],

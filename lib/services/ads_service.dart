@@ -20,7 +20,7 @@ class AdsService {
 
   void _loadBannerAd() {
     _bannerAd = BannerAd(
-      adUnitId: 'ca-app-pub-3677409032346147/26*55089746',
+      adUnitId: 'ca-app-pub-3677409032346147/2655089746',
       size: AdSize.fullBanner,
       request: const AdRequest(),
       listener: BannerAdListener(
@@ -66,13 +66,13 @@ class AdsService {
     );
   }
 
-  void showInterstitialAd({required Function onAdClosed}) {
+  Future<bool> showInterstitialAd({required Function onAdClosed}) async {
     if (_interstitialAd != null) {
       _interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
         onAdDismissedFullScreenContent: (InterstitialAd ad) {
           ad.dispose();
           _interstitialAd = null;
-          _loadInterstitialAd();
+          _loadInterstitialAd(); // Перезагружаем рекламу после показа
           onAdClosed();
         },
         onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {
@@ -83,9 +83,11 @@ class AdsService {
         },
       );
       _interstitialAd!.show();
+      return true; // Реклама была показана
     } else {
       print('Интерстициальная реклама еще не загружена.');
-      _loadInterstitialAd();
+      _loadInterstitialAd(); // Загружаем, если ещё не была загружена
+      return false; // Реклама не была показана
     }
   }
 

@@ -1,4 +1,5 @@
-// lib/providers/marker_provider.dart
+// marker_provider.dart
+
 import 'dart:convert';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
@@ -11,16 +12,14 @@ class MarkerNotifier extends StateNotifier<List<CustomMarker>> {
   final Ref _ref;
 
   MarkerNotifier(this._ref) : super([]) {
-    // Вызываем _loadMarkers при старте
     _loadMarkers();
     _startPeriodicUpdate();
 
-    // Подписка на изменение премиум-режима
     _ref.listen(premiumProvider, (previous, next) {
       if (next.isPremiumValid) {
-        refreshMarkersFromAPI();  // Загрузка с API при премиум-режиме
+        refreshMarkersFromAPI();
       } else {
-        refreshMarkersFromLocal();  // Локальная загрузка маркеров
+        refreshMarkersFromLocal();
       }
     });
   }
@@ -34,7 +33,6 @@ class MarkerNotifier extends StateNotifier<List<CustomMarker>> {
 
   Future<void> _loadMarkers() async {
     final isPremium = _ref.read(premiumProvider).isPremiumValid;
-
     if (isPremium) {
       await _fetchMarkersFromAPI();
     } else {
@@ -47,7 +45,8 @@ class MarkerNotifier extends StateNotifier<List<CustomMarker>> {
       final String response = await rootBundle.loadString('assets/data/markers.json');
       final List<dynamic> data = json.decode(response);
       final List<CustomMarker> markers = data.map((json) => CustomMarker.fromJson(json)).toList();
-      state = markers;  // Обновляем состояние
+      state = markers;
+      print('Маркер обновлен из локального хранилища. Количество маркеров: ${markers.length}');
     } catch (e) {
       print('Ошибка загрузки локальных маркеров: $e');
     }
@@ -61,14 +60,18 @@ class MarkerNotifier extends StateNotifier<List<CustomMarker>> {
           'http://194.135.36.43:5000/api/camera/nearby?latitude=${userLocation.latitude}&longitude=${userLocation.longitude}&maxDistance=10000',
         );
 
+        print('Отправка запроса к API: $uri');
+
         final response = await http.get(uri);
         if (response.statusCode == 200) {
+          print('Успешный ответ от API: ${response.body}');
+
           final List<dynamic> data = json.decode(response.body);
           final List<CustomMarker> markers = data.map((json) => CustomMarker.fromJson(json)).toList();
-          state = markers;  // Обновляем состояние
+          state = markers;
           print('Маркер обновлен из API. Количество маркеров: ${markers.length}');
         } else {
-          print('Ошибка загрузки маркеров из API: ${response.statusCode}');
+          print('Ошибка загрузки маркеров из API с кодом статуса: ${response.statusCode}');
         }
       } else {
         print('Не удалось получить местоположение пользователя.');
@@ -79,15 +82,13 @@ class MarkerNotifier extends StateNotifier<List<CustomMarker>> {
   }
 
   Future<void> refreshMarkersFromAPI() async {
+    print('Запрос на обновление маркеров из API.');
     await _fetchMarkersFromAPI();
   }
 
   Future<void> refreshMarkersFromLocal() async {
+    print('Запрос на обновление маркеров из локального хранилища.');
     await _fetchMarkersFromLocal();
-  }
-
-  Future<void> refreshMarkers() async {
-    await _loadMarkers();
   }
 }
 

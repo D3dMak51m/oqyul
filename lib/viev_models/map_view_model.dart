@@ -1,6 +1,7 @@
 // lib/view_models/map_view_model.dart
 import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_compass/flutter_compass.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -12,6 +13,8 @@ import '../models/marker.dart';
 import '../providers/marker_provider.dart';
 import '../utils/constants.dart';
 import '../services/location_service.dart';
+import 'dart:ui' as ui;
+
 
 class MapViewModel extends StateNotifier<MapViewModelState> {
   final LocationService _locationService;
@@ -23,16 +26,81 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
   final AudioPlayer _audioPlayer = AudioPlayer();
   Timer? _alertTimer;
 
-  MapViewModel(this._ref, this._locationService)
-      : super(MapViewModelState.initial()) {
+  MapViewModel(this._ref, this._locationService) : super(MapViewModelState.initial()) {
     loadMapStyle();
     _subscribeToMarkerUpdates();
+    _subscribeToThemeChanges();
   }
 
+  void _subscribeToThemeChanges() {
+    _ref.listen<bool>(settingsViewModelProvider.select((settings) => settings.isDarkTheme),
+            (previous, isDarkMode) {
+          loadMapStyle();
+        });
+  }
+
+  // Подписываемся на изменения маркеров и обновляем видимые элементы
   void _subscribeToMarkerUpdates() {
     _ref.listen<List<CustomMarker>>(markerProvider, (previous, next) {
-      _updateMarkers(next);
+      _updateVisibleMarkers(next);
     });
+  }
+
+  // Метод для обновления видимых элементов на основе уровня зума
+  void _updateVisibleMarkers(List<CustomMarker> markers) async {
+    final currentZoom = state.currentZoom;
+    final isZoomedIn = currentZoom >= 13;
+
+    if (isZoomedIn) {
+      state = state.copyWith(mapMarkers: _createMarkers(markers));
+    } else {
+      final pointSize = currentZoom >= 10 ? 8.0 : 4.0;
+      state = state.copyWith(mapMarkers: await _createPoints(markers, pointSize));
+    }
+  }
+
+  // Создаем маркеры для отображения при увеличенном масштабе
+  Set<Marker> _createMarkers(List<CustomMarker> markers) {
+    return markers.map((marker) {
+      return Marker(
+        markerId: MarkerId(marker.id),
+        position: LatLng(marker.latitude, marker.longitude),
+        icon: _getMarkerIcon(marker.cameraType),
+      );
+    }).toSet();
+  }
+
+  // Создаем точки для отображения при уменьшенном масштабе
+  Future<Set<Marker>> _createPoints(List<CustomMarker> markers, double size) async {
+    final BitmapDescriptor pointIcon = await _createCustomPointIcon(size);
+
+    return markers.map((marker) {
+      return Marker(
+        markerId: MarkerId(marker.id),
+        position: LatLng(marker.latitude, marker.longitude),
+        icon: pointIcon,
+        onTap: () {}, // Отключаем интерактивность
+      );
+    }).toSet();
+  }
+
+  Future<BitmapDescriptor> _createCustomPointIcon(double size) async {
+    final recorder = ui.PictureRecorder();
+    final canvas = Canvas(recorder);
+    final paint = Paint()..color = const ui.Color(0xFFFF0000); // цвет точки
+
+    canvas.drawCircle(Offset(size / 2, size / 2), size / 2, paint);
+    final picture = recorder.endRecording();
+    final image = await picture.toImage(size.toInt(), size.toInt());
+    final byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+    return BitmapDescriptor.bytes(byteData!.buffer.asUint8List());
+  }
+  // Обновление уровня зума
+  void onCameraMove(CameraPosition position) {
+    if (position.zoom != state.currentZoom) {
+      state = state.copyWith(currentZoom: position.zoom);
+      _updateVisibleMarkers(_ref.read(markerProvider));
+    }
   }
 
   /// Загрузка стиля карты на основе текущей темы
@@ -43,6 +111,11 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
     try {
       final String styleJson = await rootBundle.loadString(stylePath);
       state = state.copyWith(mapStyle: styleJson);
+
+      // Устанавливаем стиль карты
+      if (_mapController != null) {
+        _mapController!.setMapStyle(styleJson);
+      }
     } catch (e) {
       print("Ошибка загрузки стиля карты: $e");
     }
@@ -52,7 +125,7 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
     _isVoiceAlertEnabled = true;
     _alertTimer = Timer.periodic(
       Duration(seconds: AppConstants.markerAlertIntervalSeconds),
-          (timer) => playAlertSound(),
+      (timer) => playAlertSound(),
     );
   }
 
@@ -92,7 +165,8 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
     double minDistance = double.infinity;
 
     for (var customMarker in _ref.read(markerProvider)) {
-      final distance = calculateDistance(userLocation, LatLng(customMarker.latitude, customMarker.longitude));
+      final distance =
+          calculateDistance(userLocation, LatLng(customMarker.latitude, customMarker.longitude));
       if (distance < minDistance) {
         minDistance = distance;
         nearestMarker = customMarker;
@@ -124,14 +198,16 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
     if (nearestMarker != null) {
       final distance = calculateDistance(
           state.userLocation!, LatLng(nearestMarker.latitude, nearestMarker.longitude));
-      state = state.copyWith(
-          nearestMarker: nearestMarker, distanceToNearestMarker: distance);
+      state = state.copyWith(nearestMarker: nearestMarker, distanceToNearestMarker: distance);
     }
   }
 
   void onMapCreated(GoogleMapController controller) {
     _mapController = controller;
     centerMapOnUserLocation();
+    if (state.mapStyle != null) {
+      _mapController!.setMapStyle(state.mapStyle);
+    }
   }
 
   void toggleMapMode() {
@@ -190,7 +266,7 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
 // Отключение режима Drive Mode
   void _disableDriveMode() {
     _compassSubscription?.cancel();
-    _locationSubscription?.cancel();  // Отменяем подписку на обновления местоположения
+    _locationSubscription?.cancel(); // Отменяем подписку на обновления местоположения
     _mapController?.animateCamera(CameraUpdate.newCameraPosition(
       CameraPosition(
         target: state.userLocation!,
@@ -201,7 +277,6 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
     state = state.copyWith(isDriveMode: false);
   }
 
-
   Future<void> centerMapOnUserLocation() async {
     final userLocation = await _locationService.getUserLocation();
     if (userLocation != null) {
@@ -209,17 +284,6 @@ class MapViewModel extends StateNotifier<MapViewModelState> {
       _mapController?.animateCamera(CameraUpdate.newLatLng(position));
       state = state.copyWith(userLocation: position);
     }
-  }
-
-  void _updateMarkers(List<CustomMarker> customMarkers) {
-    Set<Marker> mapMarkers = customMarkers.map((customMarker) {
-      return Marker(
-        markerId: MarkerId(customMarker.id),
-        position: LatLng(customMarker.latitude, customMarker.longitude),
-        icon: _getMarkerIcon(customMarker.cameraType),
-      );
-    }).toSet();
-    state = state.copyWith(mapMarkers: mapMarkers);  // Обновляем состояние карты
   }
 
   BitmapDescriptor _getMarkerIcon(int cameraType) {
@@ -254,6 +318,7 @@ class MapViewModelState {
   final bool isDriveMode;
   final CustomMarker? nearestMarker;
   final double? distanceToNearestMarker;
+  final double currentZoom;
 
   MapViewModelState({
     required this.mapStyle,
@@ -263,6 +328,7 @@ class MapViewModelState {
     required this.isDriveMode,
     required this.nearestMarker,
     required this.distanceToNearestMarker,
+    required this.currentZoom,
   });
 
   factory MapViewModelState.initial() {
@@ -274,6 +340,7 @@ class MapViewModelState {
       isDriveMode: false,
       nearestMarker: null,
       distanceToNearestMarker: null,
+      currentZoom: AppConstants.defaultMapZoom,
     );
   }
 
@@ -285,6 +352,7 @@ class MapViewModelState {
     bool? isDriveMode,
     CustomMarker? nearestMarker,
     double? distanceToNearestMarker,
+    double? currentZoom,
   }) {
     return MapViewModelState(
       mapStyle: mapStyle ?? this.mapStyle,
@@ -294,12 +362,13 @@ class MapViewModelState {
       isDriveMode: isDriveMode ?? this.isDriveMode,
       nearestMarker: nearestMarker ?? this.nearestMarker,
       distanceToNearestMarker: distanceToNearestMarker ?? this.distanceToNearestMarker,
+      currentZoom: currentZoom ?? this.currentZoom,
     );
   }
 }
 
 final mapViewModelProvider = StateNotifierProvider<MapViewModel, MapViewModelState>(
-      (ref) => MapViewModel(ref, ref.read(locationServiceProvider)),
+  (ref) => MapViewModel(ref, ref.read(locationServiceProvider)),
 );
 
 final compassProvider = Provider<Stream<double?>>((ref) {

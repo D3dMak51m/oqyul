@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oqyul/models/premium.dart';
+import 'package:oqyul/services/ads_service.dart';
 import 'package:oqyul/utils/constants.dart';
 import 'package:oqyul/viev_models/premium_view_model.dart';
 
@@ -10,6 +11,7 @@ class PremiumButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final premiumState = ref.watch(premiumViewModelProvider);
     final premiumViewModel = ref.watch(premiumViewModelProvider.notifier);
+    final adsService = ref.read(adsServiceProvider);
 
     return ElevatedButton(
       style: ButtonStyle(
@@ -20,11 +22,21 @@ class PremiumButton extends ConsumerWidget {
           EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         ),
       ),
-      onPressed: () {
-        if (premiumState.isPremiumValid) {
-          premiumViewModel.showAdForPremium(extend: true);
-        } else {
-          premiumViewModel.showAdForPremium();
+      onPressed: () async {
+        bool adShown = await adsService.showInterstitialAd(
+          onAdClosed: () {
+            // Действия после закрытия рекламы, если необходимо
+            premiumState.isPremiumValid
+                ? premiumViewModel.extendPremium()
+                : premiumViewModel.activatePremium();
+          },
+        );
+
+        if (!adShown) {
+          // Уведомляем пользователя, если реклама ещё загружается
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Реклама еще загружается, попробуйте позже.')),
+          );
         }
       },
       child: premiumState.isPremiumValid
@@ -62,8 +74,7 @@ class PremiumButton extends ConsumerWidget {
   double _getRemainingTimeProgress(PremiumStatus premiumState) {
     if (premiumState.expirationTime == null) return 0.0;
     final totalDuration = AppConstants.premiumActivationDuration.inSeconds;
-    final remainingDuration =
-        premiumState.expirationTime!.difference(DateTime.now()).inSeconds;
+    final remainingDuration = premiumState.expirationTime!.difference(DateTime.now()).inSeconds;
     return remainingDuration / totalDuration;
   }
 }
