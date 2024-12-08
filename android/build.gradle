@@ -3,11 +3,19 @@ allprojects {
         google()
         mavenCentral()
     }
+    def mapboxToken = project.hasProperty("MAPBOX_ACCESS_TOKEN") ? project.MAPBOX_ACCESS_TOKEN : null
+    println "MAPBOX_ACCESS_TOKEN: ${mapboxToken}"
+    if (mapboxToken == null) {
+        throw new GradleException("SDK Registry token is null. Add MAPBOX_ACCESS_TOKEN in local.properties.")
+    }
+
+
 }
 
 rootProject.buildDir = "../build"
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
+
 }
 subprojects {
     project.evaluationDependsOn(":app")

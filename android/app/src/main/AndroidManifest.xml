@@ -44,6 +44,9 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3677409032346147~4506120248"/>  <!-- Ваш App ID из AdMob -->
+        <meta-data
+            android:name="com.mapbox.token"
+            android:value="sk.eyJ1IjoiZDNkLW1hazUxbSIsImEiOiJjbTNyeW0wZGUwN21rMnFzMXVwMGs1d3FuIn0.rrigSnjB5mXKR965t8SNjQ" />
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and
