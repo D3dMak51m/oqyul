@@ -7,17 +7,16 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-  audioplayers: ^6.1.0
   flutter:
     sdk: flutter
+  audioplayers: ^6.1.0
   flutter_compass: ^0.8.1
   flutter_local_notifications: ^18.0.1
-  flutter_riverpod: ^2.6.1
   google_maps_flutter: ^2.2.5
   location: ^7.0.1
   shared_preferences: ^2.3.3
-  timezone: ^0.10.0
-  # Для чтения JSON из ассетов
+  google_mobile_ads: ^5.2.0
+
   flutter_localizations:
     sdk: flutter
 
@@ -33,6 +32,7 @@ flutter:
     - assets/icons/0.png
     - assets/icons/1.png
     - assets/icons/2.png
+    - assets/icons/car.png
     - assets/sounds/ru/0.mp3
     - assets/sounds/en/0.mp3
     - assets/sounds/0.mp3

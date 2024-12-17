@@ -31,16 +31,12 @@ class PremiumController extends ValueNotifier<void> {
   }
 
   Future<void> watchAd() async {
-    // Эмуляция просмотра рекламы:
-    // Просто увеличим счетчик.
     await premiumService.incrementAdsWatched();
 
     if (!isPremiumActive && adsWatched >= 5) {
-      // Активируем премиум
       await premiumService.activatePremium();
       await premiumService.resetAdsWatched();
     } else if (isPremiumActive) {
-      // Продлеваем премиум на 3 часа
       await premiumService.extendPremium();
     }
 

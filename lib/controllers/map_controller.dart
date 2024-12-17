@@ -1,5 +1,4 @@
 // controllers/map_controller.dart
-
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
@@ -7,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
-
 import '../models/marker_model.dart';
 import '../utils/cluster_utils.dart';
 import '../utils/location_utils.dart';
@@ -24,7 +22,7 @@ class MapController {
   CompassService compassService = CompassService();
 
   List<MarkerModel> allMarkersData = [];
-  LatLng initialPosition = const LatLng(37.42796133580664, -122.085749655962);
+  LatLng initialPosition = const LatLng(41.31106548956276, 69.27971244305802);
   double currentZoom = 14.0;
 
   bool isCenteringOnUser = false;
@@ -35,9 +33,20 @@ class MapController {
 
   bool _isMapReady = false;
   bool get isMapReady => _isMapReady;
+  Function(LatLng)? onLocationUpdate;
+  Marker? userCarMarker;
+  BitmapDescriptor? carIcon;
 
   Future<void> init() async {
     await _loadMarkers();
+    await loadCarIconOnce();
+  }
+
+  Future<void> loadCarIconOnce() async {
+    carIcon = await BitmapDescriptor.fromAssetImage(
+      const ImageConfiguration(size: Size(48,48)),
+      'assets/icons/car.png',
+    );
   }
 
   Future<void> _loadMarkers() async {
@@ -46,15 +55,15 @@ class MapController {
     allMarkersData = data.map((e) => MarkerModel.fromJson(e)).toList();
   }
 
-  void dispose() {
-    _compassSub?.cancel();
-    _locationSub?.cancel();
-  }
-
   void onMapCreated(GoogleMapController controller) {
     _mapController = controller;
     _isMapReady = true;
     _updateVisibleMarkers();
+  }
+
+  void dispose() {
+    _compassSub?.cancel();
+    _locationSub?.cancel();
   }
 
   Future<void> onCameraIdle() async {
@@ -146,7 +155,8 @@ class MapController {
     isCenteringOnUser = true;
     locationService.changeSettings(interval: 1000);
     _locationSub?.cancel();
-    _locationSub = locationService.onLocationChanged.listen((loc) {
+
+    _locationSub = locationService.onLocationChanged.listen((loc) async {
       currentUserLocation = loc;
       if (isCenteringOnUser || driveMode) {
         final newPos = LatLng(loc.latitude!, loc.longitude!);
@@ -154,7 +164,30 @@ class MapController {
           CameraPosition(target: newPos, zoom: driveMode ? 18 : 15),
         ));
       }
+      await _updateUserMarker(loc);
+      onLocationUpdate?.call(LatLng(loc.latitude!, loc.longitude!));
     });
+  }
+
+  Future<void> _updateUserMarker(LocationData loc) async {
+    if (carIcon == null) {
+      carIcon = await BitmapDescriptor.fromAssetImage(
+        const ImageConfiguration(size: Size(48,48)),
+        'assets/icons/car.png',
+      );
+    }
+    final newPos = LatLng(loc.latitude!, loc.longitude!);
+
+    userCarMarker = Marker(
+      markerId: const MarkerId('user_car'),
+      position: newPos,
+      icon: carIcon!,
+    );
+
+    final currentSet = visibleMarkers.value;
+    currentSet.removeWhere((m) => m.markerId.value == 'user_car');
+    currentSet.add(userCarMarker!);
+    visibleMarkers.value = Set<Marker>.from(currentSet);
   }
 
   void _disableCentering() {
@@ -188,7 +221,26 @@ class MapController {
     }
   }
 
-  // Добавим метод для установки стиля карты:
+  MarkerModel? getNearestMarker() {
+    if (currentUserLocation == null) return null;
+    if (allMarkersData.isEmpty) return null;
+
+    double userLat = currentUserLocation!.latitude!;
+    double userLon = currentUserLocation!.longitude!;
+
+    MarkerModel? nearest;
+    double minDist = double.infinity;
+
+    for (var marker in allMarkersData) {
+      final dist = distanceBetween(userLat, userLon, marker.latitude, marker.longitude);
+      if (dist < minDist) {
+        minDist = dist;
+        nearest = marker;
+      }
+    }
+    return nearest;
+  }
+
   Future<void> setMapStyle(String style) async {
     await _mapController?.setMapStyle(style);
   }

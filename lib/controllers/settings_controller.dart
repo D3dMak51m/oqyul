@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import '../services/settings_service.dart';
+import 'package:oqyol/services/settings_service.dart';
 
 class SettingsController extends ValueNotifier<void> {
   final SettingsService settingsService;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'controllers/settings_controller.dart';
 import 'services/settings_service.dart';
 import 'screens/map_screen.dart';
@@ -8,6 +8,7 @@ import 'screens/map_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  await MobileAds.instance.initialize();
   final settingsService = SettingsService();
   await settingsService.loadSettings(); // Загрузка сохранённых настроек
   final settingsController = SettingsController(settingsService: settingsService);
@@ -27,9 +28,22 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'Marker Clustering & Map Modes Example',
           themeMode: settingsController.isDarkTheme ? ThemeMode.dark : ThemeMode.light,
-          theme: ThemeData.light(),
-          darkTheme: ThemeData.dark(),
-          locale: Locale(settingsController.currentLanguage), // упрощённо
+          theme: ThemeData(
+            useMaterial3: true,
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Color(0xff435158),
+              brightness: Brightness.light,
+            ),
+          ),
+          darkTheme: ThemeData(
+            useMaterial3: true,
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Color(0xff435158),
+              brightness: Brightness.dark,
+            ),
+          ),
+
+          locale: Locale(settingsController.currentLanguage),
           localizationsDelegates: [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,

@@ -34,13 +34,11 @@ class PremiumService {
 
     _adsWatched = prefs.getInt('adsWatched') ?? 0;
 
-    // Инициализируем уведомления
     const AndroidInitializationSettings androidInit = AndroidInitializationSettings('@mipmap/ic_launcher');
     const DarwinInitializationSettings darwinInit = DarwinInitializationSettings();
     const InitializationSettings initSettings = InitializationSettings(
       android: androidInit,
-      iOS: darwinInit, // В последних версиях можно использовать darwin вместо iOS
-      // darwinInit работает и для iOS, и для macOS при необходимости
+      iOS: darwinInit,
     );
 
     await _notificationsPlugin.initialize(initSettings);

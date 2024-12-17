@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-
+import 'package:oqyol/controllers/navigation_controller.dart';
+import 'package:oqyol/widgets/nearest_marker_widget.dart';
 import '../controllers/map_controller.dart';
 import '../controllers/voice_controller.dart';
 import '../controllers/settings_controller.dart';
 import '../controllers/premium_controller.dart';
-import '../services/premium_service.dart'; // Импортируем PremiumService, чтобы создать экземпляр
-
+import '../services/premium_service.dart';
 import 'language_selection_dialog.dart';
 
 class MapScreen extends StatefulWidget {
@@ -21,12 +22,11 @@ class _MapScreenState extends State<MapScreen> {
   final mapController = MapController();
   final voiceController = VoiceController();
   late PremiumController premiumController;
+  late NavigationController navigationController;
 
   @override
   void initState() {
     super.initState();
-    // Ранее было: premiumController = PremiumController(premiumService: PremiumControllerDependencies.premiumService);
-    // Заменяем на создание собственного экземпляра:
     final premiumService = PremiumService();
     premiumController = PremiumController(premiumService: premiumService);
     premiumController.init();
@@ -34,24 +34,32 @@ class _MapScreenState extends State<MapScreen> {
     mapController.init();
     voiceController.setMapController(mapController);
     widget.settingsController.addListener(_onSettingsChanged);
+
+    navigationController = NavigationController();
+
+    navigationController.addListener(() {
+      setState(() {});
+    });
+    mapController.onLocationUpdate = (latLng) {
+      navigationController.updateLocation(latLng);
+    };
   }
 
   void _onSettingsChanged() {
-    // Обновить язык/тему карты
     _updateMapStyle();
+    print("Settings changed: isDarkTheme=${widget.settingsController.isDarkTheme}");
     voiceController.setLanguage(widget.settingsController.currentLanguage);
   }
 
   Future<void> _updateMapStyle() async {
-    // Проверим, что карта инициализирована
     if (mapController.isMapReady) {
-      String style = '';
+      String style;
       if (widget.settingsController.isDarkTheme) {
-        style = await DefaultAssetBundle.of(context).loadString('assets/map_styles/dark.json');
+        style = await rootBundle.loadString('assets/map/dark.json');
       } else {
-        style = await DefaultAssetBundle.of(context).loadString('assets/map_styles/light.json');
+        style = await rootBundle.loadString('assets/map/light.json');
       }
-      mapController.setMapStyle(style);
+      await mapController.setMapStyle(style);
     }
   }
 
@@ -61,6 +69,7 @@ class _MapScreenState extends State<MapScreen> {
     mapController.dispose();
     voiceController.dispose();
     premiumController.dispose();
+    navigationController.dispose();
     super.dispose();
   }
 
@@ -110,11 +119,11 @@ class _MapScreenState extends State<MapScreen> {
               leading: _buildSettingsMenu(),
               title: const Text('Marker Clustering & Map Modes Example'),
               actions: [
-                TextButton(
+                ElevatedButton(
                   onPressed: _onPremiumButtonPressed,
                   child: Text(
                     premiumController.getButtonText(),
-                    style: const TextStyle(color: Colors.white),
+                    // style: const TextStyle(color: Colors.white),
                   ),
                 ),
               ],
@@ -124,7 +133,14 @@ class _MapScreenState extends State<MapScreen> {
                 ValueListenableBuilder<Set<Marker>>(
                     valueListenable: mapController.visibleMarkers,
                     builder: (context, markers, child) {
+                      Set<Polyline> polylines = {};
+                      if (navigationController.currentPolyline != null) {
+                        polylines = { navigationController.currentPolyline! };
+                      }
                       return GoogleMap(
+                        zoomControlsEnabled: false,
+                        compassEnabled: false,
+                        minMaxZoomPreference: const MinMaxZoomPreference(12, 30),
                         onMapCreated: (controller) {
                           mapController.onMapCreated(controller);
                           _updateMapStyle();
@@ -134,12 +150,18 @@ class _MapScreenState extends State<MapScreen> {
                           zoom: mapController.currentZoom,
                         ),
                         markers: markers,
+                        polylines: polylines,
                         onCameraIdle: mapController.onCameraIdle,
+                        onTap: _onMapTap,
+                        myLocationEnabled: false,
                       );
                     }
                 ),
+
+                // Кнопки справа
                 Positioned(
-                  top: 10,
+                  bottom: 100,
+                  // top: 10,
                   right: 10,
                   child: Column(
                     children: [
@@ -168,15 +190,120 @@ class _MapScreenState extends State<MapScreen> {
                         heroTag: "toggle_voice",
                         onPressed: () {
                           voiceController.toggleVoiceNotifications();
+                          setState(() {});  // <-- Trigger rebuild immediately
                         },
                         backgroundColor: voiceController.voiceNotificationsEnabled ? Colors.green : Colors.red,
                         child: voiceController.voiceNotificationsEnabled
                             ? const Icon(Icons.volume_up)
                             : const Icon(Icons.volume_off),
                       ),
+
                     ],
                   ),
                 ),
+
+                // Навигационный виджет
+                if (navigationController.isNavigating)
+                  Positioned(
+                    top: 10,
+                    left: 20,
+                    right: 20,
+                    child: _buildNavigationInfo(),
+                  ),
+
+                // Нижний виджет
+                Positioned(
+                  bottom: 100,
+                  left: 0,
+                  right: 0,
+                  child: Center(
+                    child: NearestMarkerWidget(mapController: mapController),
+                  ),
+                ),
+              ],
+            ),
+          );
+        }
+    );
+  }
+
+
+  Widget _buildNavigationInfo() {
+    final eta = navigationController.eta;
+    final dist = navigationController.remainingDistance;
+
+    String etaStr = '${eta.inMinutes} мин';
+    if (eta.inHours > 0) {
+      final h = eta.inHours;
+      final m = eta.inMinutes % 60;
+      etaStr = '$h ч $m мин';
+    }
+    String distStr = dist < 1000
+        ? '${dist.toStringAsFixed(0)} м'
+        : '${(dist / 1000).toStringAsFixed(1)} км';
+
+    return Container(
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: Color(0xff435158).withOpacity(0.9),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Следующий маневр: ${navigationController.nextManeuver}',
+                  style: const TextStyle(fontSize: 16, color: Colors.white),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'До цели: $distStr, ETA: $etaStr',
+                  style: const TextStyle(fontSize: 16, color: Colors.white),
+                ),
+              ],
+            ),
+          ),
+          IconButton(
+            highlightColor: Colors.red,
+            icon: const Icon(Icons.close, color: Colors.red),
+            onPressed: () {
+              navigationController.cancelRoute();
+              setState(() {});
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _onMapTap(LatLng pos) async {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return SizedBox(
+            height: 120,
+            child: Column(
+              children: [
+                const SizedBox(height: 16),
+                const Text('Проложить маршрут сюда?', style: TextStyle(fontSize: 18)),
+                const SizedBox(height: 16),
+                ElevatedButton(
+                  onPressed: () async {
+                    Navigator.pop(context);
+                    final userLocation = mapController.currentUserLocation;
+                    if (userLocation == null) return;
+
+                    final start = LatLng(userLocation.latitude!, userLocation.longitude!);
+                    await navigationController.buildRoute(start, pos);
+
+                    await mapController.toggleDriveMode();
+                  },
+                  child: const Text('Проложить маршрут'),
+                )
               ],
             ),
           );

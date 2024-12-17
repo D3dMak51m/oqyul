@@ -1,7 +1,7 @@
 import 'dart:math' as Math;
 
 double distanceBetween(double lat1, double lon1, double lat2, double lon2) {
-  const R = 6371000; // радиус Земли в метрах
+  const R = 6371000;
   double dLat = deg2rad(lat2 - lat1);
   double dLon = deg2rad(lon2 - lon1);
   double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +

@@ -13,7 +13,6 @@ class VoiceNotificationService {
   }
 
   Future<void> playVoiceNotification(int cameraType, int distance) async {
-    // Остановка предыдущего воспроизведения
     await _audioPlayer.stop();
 
     String typeStr = cameraType.toString();
@@ -24,7 +23,6 @@ class VoiceNotificationService {
   }
 
   Future<String> _getSoundFile(String lang, String type, String fileName) async {
-    // Путь: assets/sounds/<lang>/<type>/<fileName>.mp3
     String path = 'assets/sounds/$type/$fileName.mp3';
     if (!await _assetExists(path)) {
       String defaultPath = 'assets/sounds/$fileName.mp3';
