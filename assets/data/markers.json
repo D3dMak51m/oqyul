@@ -1,312 +1,3605 @@
-[
+{
+  "type": "FeatureCollection",
+  "features": [
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.27996876623816,
+          41.223846922088676
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 1,
+        "createdOn": "2024-11-22T01:11:16.328635",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.34585098084426,
+          41.29999594170813
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 39.656001,
-        "longitude": 66.922809,
-        "id": 60257,
-        "createdOn": "2024-10-29T15:37:56.0694188",
+        "id": 2,
+        "createdOn": "2024-11-22T01:11:16.328646",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.35129365356305,
+          41.20576954378655
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 41.000085,
-        "longitude": 71.672579,
-        "id": 60258,
-        "createdOn": "2024-10-29T15:37:56.5487883",
+        "id": 3,
+        "createdOn": "2024-11-22T01:11:16.328650",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
-        "cameraType": 0,
-        "latitude": 41.060332,
-        "longitude": 69.347808,
-        "id": 60259,
-        "createdOn": "2024-10-29T15:37:57.0655823",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.24693713499038,
+          41.22147404702215
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 4,
+        "createdOn": "2024-11-22T01:11:16.328654",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3178077276687,
+          41.35979961162329
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 5,
+        "createdOn": "2024-11-22T01:11:16.328658",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3253875299252,
+          41.37185424618866
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 40.952544,
-        "longitude": 71.665608,
-        "id": 60260,
-        "createdOn": "2024-10-29T15:37:57.8135771",
+        "id": 6,
+        "createdOn": "2024-11-22T01:11:16.328661",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3708528154924,
+          41.29476239233001
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 7,
+        "createdOn": "2024-11-22T01:11:16.328664",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.34735379292356,
+          41.231967782606766
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 8,
+        "createdOn": "2024-11-22T01:11:16.328675",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.27346053290877,
+          41.3393942100211
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 41.000085,
-        "longitude": 71.672579,
-        "id": 60261,
-        "createdOn": "2024-10-29T15:37:58.2892544",
+        "id": 9,
+        "createdOn": "2024-11-22T01:11:16.328682",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
-        "cameraType": 0,
-        "latitude": 41.436349,
-        "longitude": 69.545341,
-        "id": 60262,
-        "createdOn": "2024-10-29T15:37:58.7705147",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.28914652489271,
+          41.22237432420247
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 10,
+        "createdOn": "2024-11-22T01:11:16.328688",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.26010086568093,
+          41.230966139828844
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 11,
+        "createdOn": "2024-11-22T01:11:16.328693",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.38198442306886,
+          41.35898776813535
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 12,
+        "createdOn": "2024-11-22T01:11:16.328698",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.24311452239924,
+          41.330844043236866
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 13,
+        "createdOn": "2024-11-22T01:11:16.328701",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.20660476597536,
+          41.27374090044733
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 14,
+        "createdOn": "2024-11-22T01:11:16.328704",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.29446711823219,
+          41.3793214837679
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 15,
+        "createdOn": "2024-11-22T01:11:16.328707",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.29870305950449,
+          41.34616511457302
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 40.952544,
-        "longitude": 71.665608,
-        "id": 60263,
-        "createdOn": "2024-10-29T15:37:59.2822782",
+        "id": 16,
+        "createdOn": "2024-11-22T01:11:16.328712",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.32746846618231,
+          41.274186401283174
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 41.000085,
-        "longitude": 71.672579,
-        "id": 60264,
-        "createdOn": "2024-10-29T15:37:59.7802808",
+        "id": 17,
+        "createdOn": "2024-11-22T01:11:16.328716",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.29561720942864,
+          41.39449918319113
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 18,
+        "createdOn": "2024-11-22T01:11:16.328721",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.233384534936,
+          41.36020782433461
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 19,
+        "createdOn": "2024-11-22T01:11:16.328726",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.39525410799702,
+          41.24035865545534
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 40.952544,
-        "longitude": 71.665608,
-        "id": 60265,
-        "createdOn": "2024-10-29T15:38:00.689997",
+        "id": 20,
+        "createdOn": "2024-11-22T01:11:16.328731",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.34099355120999,
+          41.21545758584413
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 21,
+        "createdOn": "2024-11-22T01:11:16.328736",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.24191614424983,
+          41.220133839256995
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 41.000085,
-        "longitude": 71.672579,
-        "id": 60266,
-        "createdOn": "2024-10-29T15:38:01.1660722",
+        "id": 22,
+        "createdOn": "2024-11-22T01:11:16.328741",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.38103682162178,
+          41.32473529952968
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 23,
+        "createdOn": "2024-11-22T01:11:16.328745",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.23060145378253,
+          41.22283048287717
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 40.952544,
-        "longitude": 71.665608,
-        "id": 60267,
-        "createdOn": "2024-10-29T15:38:02.2094146",
+        "id": 24,
+        "createdOn": "2024-11-22T01:11:16.328750",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.27163576547409,
+          41.38429080934709
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 25,
+        "createdOn": "2024-11-22T01:11:16.328754",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.39101757390696,
+          41.37635839317328
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 41.000085,
-        "longitude": 71.672579,
-        "id": 60268,
-        "createdOn": "2024-10-29T15:38:02.6261672",
+        "id": 26,
+        "createdOn": "2024-11-22T01:11:16.328759",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.2990717069531,
+          41.37335377413895
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 27,
+        "createdOn": "2024-11-22T01:11:16.328765",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.2527986550065,
+          41.28324485048349
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 28,
+        "createdOn": "2024-11-22T01:11:16.328769",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.27148055768333,
+          41.247392206832366
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 29,
+        "createdOn": "2024-11-22T01:11:16.328773",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.32120067139462,
+          41.26556037931292
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 30,
+        "createdOn": "2024-11-22T01:11:16.328778",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.26259567836973,
+          41.205719146117886
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 31,
+        "createdOn": "2024-11-22T01:11:16.328782",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.31320266293422,
+          41.32124570662009
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 32,
+        "createdOn": "2024-11-22T01:11:16.328786",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.37403249797109,
+          41.21904874906813
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 33,
+        "createdOn": "2024-11-22T01:11:16.328788",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.21544686875625,
+          41.20152103156807
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 34,
+        "createdOn": "2024-11-22T01:11:16.328791",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.21418319752836,
+          41.3233319665636
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 35,
+        "createdOn": "2024-11-22T01:11:16.328794",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.27812149396097,
+          41.233841659315615
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 40.952544,
-        "longitude": 71.665608,
-        "id": 60269,
-        "createdOn": "2024-10-29T15:38:03.7889796",
+        "id": 36,
+        "createdOn": "2024-11-22T01:11:16.328796",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.29539306250047,
+          41.2623355740627
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 37,
+        "createdOn": "2024-11-22T01:11:16.328818",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.26112729404015,
+          41.37425943955484
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 38,
+        "createdOn": "2024-11-22T01:11:16.328824",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.34929374703486,
+          41.21754036038233
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 41.000085,
-        "longitude": 71.672579,
-        "id": 60270,
-        "createdOn": "2024-10-29T15:38:04.3806654",
+        "id": 39,
+        "createdOn": "2024-11-22T01:11:16.328829",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.24703711477218,
+          41.29372362495638
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 40,
+        "createdOn": "2024-11-22T01:11:16.328833",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.34196759598052,
+          41.26005916106732
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 41.000085,
-        "longitude": 71.672579,
-        "id": 60271,
-        "createdOn": "2024-10-29T15:38:05.7876409",
+        "id": 41,
+        "createdOn": "2024-11-22T01:11:16.328841",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.39563616955847,
+          41.27909741044911
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 42,
+        "createdOn": "2024-11-22T01:11:16.328846",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.30475957921732,
+          41.311108116939145
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 43,
+        "createdOn": "2024-11-22T01:11:16.328851",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.23941535005622,
+          41.282491165327166
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 44,
+        "createdOn": "2024-11-22T01:11:16.328853",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.26173567435814,
+          41.33325550960892
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 45,
+        "createdOn": "2024-11-22T01:11:16.328856",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.32892814924409,
+          41.226504580594
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 46,
+        "createdOn": "2024-11-22T01:11:16.328860",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.25896098699691,
+          41.35632331184498
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 47,
+        "createdOn": "2024-11-22T01:11:16.328862",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.37215694252234,
+          41.31733471104236
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 48,
+        "createdOn": "2024-11-22T01:11:16.328864",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.37445610926453,
+          41.25888378090661
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 49,
+        "createdOn": "2024-11-22T01:11:16.328866",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.27100147859646,
+          41.26185179503056
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 50,
+        "createdOn": "2024-11-22T01:11:16.328872",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.35805348074518,
+          41.244517490690576
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 40.952544,
-        "longitude": 71.665608,
-        "id": 60272,
-        "createdOn": "2024-10-29T15:38:06.702689",
+        "id": 51,
+        "createdOn": "2024-11-22T01:11:16.328874",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.36352171170032,
+          41.34460654182094
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 52,
+        "createdOn": "2024-11-22T01:11:16.328876",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.22759473303404,
+          41.32253866092695
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 53,
+        "createdOn": "2024-11-22T01:11:16.328878",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.26696338510614,
+          41.31356352116666
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 41.000085,
-        "longitude": 71.672579,
-        "id": 60273,
-        "createdOn": "2024-10-29T15:38:07.2046803",
+        "id": 54,
+        "createdOn": "2024-11-22T01:11:16.328881",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3073359856966,
+          41.25650772696971
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 55,
+        "createdOn": "2024-11-22T01:11:16.328883",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.25290821402871,
+          41.29331178682761
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 41.000085,
-        "longitude": 71.672579,
-        "id": 60274,
-        "createdOn": "2024-10-29T15:38:08.682122",
+        "id": 56,
+        "createdOn": "2024-11-22T01:11:16.328887",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.24775508806343,
+          41.31492178361743
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 57,
+        "createdOn": "2024-11-22T01:11:16.328890",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.23011614934535,
+          41.29193971617325
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 41.000085,
-        "longitude": 71.672579,
-        "id": 60275,
-        "createdOn": "2024-10-29T15:38:10.0797901",
+        "id": 58,
+        "createdOn": "2024-11-22T01:11:16.328892",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
-        "cameraType": 0,
-        "latitude": 41.200425,
-        "longitude": 69.107183,
-        "id": 60276,
-        "createdOn": "2024-10-29T15:38:10.6177025",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.23935435948371,
+          41.25628924353338
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 59,
+        "createdOn": "2024-11-22T01:11:16.328897",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3334858265699,
+          41.33886439414549
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 60,
+        "createdOn": "2024-11-22T01:11:16.328902",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.26000727586887,
+          41.37444823678569
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 61,
+        "createdOn": "2024-11-22T01:11:16.328907",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.33261604444395,
+          41.39639184786984
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 62,
+        "createdOn": "2024-11-22T01:11:16.328912",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.34117999617342,
+          41.217044240935245
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 63,
+        "createdOn": "2024-11-22T01:11:16.328917",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.332738490413,
+          41.26843894630236
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 64,
+        "createdOn": "2024-11-22T01:11:16.328921",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.2667104297818,
+          41.234998162756604
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 65,
+        "createdOn": "2024-11-22T01:11:16.328926",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.31939194352672,
+          41.36778602545698
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 66,
+        "createdOn": "2024-11-22T01:11:16.328931",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.303434260973,
+          41.235929009452214
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 67,
+        "createdOn": "2024-11-22T01:11:16.328935",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.38275393770849,
+          41.2556875632122
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 68,
+        "createdOn": "2024-11-22T01:11:16.328937",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3082759865274,
+          41.28599091998479
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 41.000085,
-        "longitude": 71.672579,
-        "id": 60277,
-        "createdOn": "2024-10-29T15:38:11.4995625",
+        "id": 69,
+        "createdOn": "2024-11-22T01:11:16.328940",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.32532642818833,
+          41.25563283175999
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 70,
+        "createdOn": "2024-11-22T01:11:16.328942",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.20640253597757,
+          41.35205695754561
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 71,
+        "createdOn": "2024-11-22T01:11:16.328945",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.22331886555462,
+          41.263306918106494
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 41.000085,
-        "longitude": 71.672579,
-        "id": 60278,
-        "createdOn": "2024-10-29T15:38:12.9231916",
+        "id": 72,
+        "createdOn": "2024-11-22T01:11:16.328950",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.20414580841249,
+          41.316096717441106
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 73,
+        "createdOn": "2024-11-22T01:11:16.328956",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3755611473229,
+          41.33482424920333
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 74,
+        "createdOn": "2024-11-22T01:11:16.328966",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.20266417865776,
+          41.355952720393766
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 75,
+        "createdOn": "2024-11-22T01:11:16.328972",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.2914027357117,
+          41.24135886620637
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 40.035173,
-        "longitude": 64.847167,
-        "id": 60279,
-        "createdOn": "2024-10-29T15:38:14.2010903",
+        "id": 76,
+        "createdOn": "2024-11-22T01:11:16.328976",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.20607449918946,
+          41.39871311813303
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 77,
+        "createdOn": "2024-11-22T01:11:16.328978",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.25345080648498,
+          41.28701748659988
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 78,
+        "createdOn": "2024-11-22T01:11:16.328980",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.39037739426631,
+          41.39823815023158
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 79,
+        "createdOn": "2024-11-22T01:11:16.328982",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.32645786630145,
+          41.354399913077906
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 80,
+        "createdOn": "2024-11-22T01:11:16.328985",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.34703798302625,
+          41.222657772252326
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 81,
+        "createdOn": "2024-11-22T01:11:16.328987",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.222290213881,
+          41.377351911307294
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 82,
+        "createdOn": "2024-11-22T01:11:16.328989",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.38392411685837,
+          41.286216122472126
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 41.000085,
-        "longitude": 71.672579,
-        "id": 60280,
-        "createdOn": "2024-10-29T15:38:14.6837536",
+        "id": 83,
+        "createdOn": "2024-11-22T01:11:16.328992",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
-        "cameraType": 0,
-        "latitude": 41.060332,
-        "longitude": 69.347808,
-        "id": 60281,
-        "createdOn": "2024-10-29T15:38:15.3302466",
-        "updatedOn": null,
-        "deletedOn": null,
-        "isActive": true
-    },
-    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.31808700984212,
+          41.26394919717417
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 41.000085,
-        "longitude": 71.672579,
-        "id": 60282,
-        "createdOn": "2024-10-29T15:38:16.0467243",
+        "id": 84,
+        "createdOn": "2024-11-22T01:11:16.328994",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
-        "cameraType": 0,
-        "latitude": 41.040618,
-        "longitude": 69.322295,
-        "id": 60283,
-        "createdOn": "2024-10-29T15:38:16.8271275",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.39371927910338,
+          41.2531441338685
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 85,
+        "createdOn": "2024-11-22T01:11:16.328996",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.21964819833728,
+          41.32645012091941
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 86,
+        "createdOn": "2024-11-22T01:11:16.328998",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.27519666609835,
+          41.33092908623934
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 87,
+        "createdOn": "2024-11-22T01:11:16.329000",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.25588377599979,
+          41.321532725672355
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 88,
+        "createdOn": "2024-11-22T01:11:16.329003",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.39661627013254,
+          41.3544138036213
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 89,
+        "createdOn": "2024-11-22T01:11:16.329006",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.24943378092861,
+          41.277798571688265
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 90,
+        "createdOn": "2024-11-22T01:11:16.329008",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.22760992080777,
+          41.27206806222671
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 91,
+        "createdOn": "2024-11-22T01:11:16.329011",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.29052287089597,
+          41.3869282264253
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 92,
+        "createdOn": "2024-11-22T01:11:16.329016",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.24580846837836,
+          41.346973596074065
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 93,
+        "createdOn": "2024-11-22T01:11:16.329018",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.23600187400761,
+          41.24724812376824
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 94,
+        "createdOn": "2024-11-22T01:11:16.329021",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3246186070304,
+          41.25218539121505
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 95,
+        "createdOn": "2024-11-22T01:11:16.329023",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.24166238824381,
+          41.37856522488077
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 96,
+        "createdOn": "2024-11-22T01:11:16.329025",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.32902635625933,
+          41.347607138663285
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 97,
+        "createdOn": "2024-11-22T01:11:16.329028",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.36864688092507,
+          41.29637598229624
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 98,
+        "createdOn": "2024-11-22T01:11:16.329030",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.20510696771674,
+          41.249836365498
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 99,
+        "createdOn": "2024-11-22T01:11:16.329032",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.34046589794819,
+          41.26605224643252
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 41.000085,
-        "longitude": 71.672579,
-        "id": 60284,
-        "createdOn": "2024-10-29T15:38:17.4463238",
+        "id": 100,
+        "createdOn": "2024-11-22T01:11:16.329034",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
-        "cameraType": 0,
-        "latitude": 41.51477,
-        "longitude": 69.634231,
-        "id": 60285,
-        "createdOn": "2024-10-29T15:38:18.3173926",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.28895394499459,
+          41.322456794296265
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 101,
+        "createdOn": "2024-11-22T01:11:16.329038",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.20519875515743,
+          41.298569005133864
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 102,
+        "createdOn": "2024-11-22T01:11:16.329040",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.22080175431638,
+          41.28815397745092
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 103,
+        "createdOn": "2024-11-22T01:11:16.329042",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.20736820036093,
+          41.31139061716494
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 104,
+        "createdOn": "2024-11-22T01:11:16.329044",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.20125640926058,
+          41.2329985770906
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 105,
+        "createdOn": "2024-11-22T01:11:16.329047",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.2941909056644,
+          41.32657425406609
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 106,
+        "createdOn": "2024-11-22T01:11:16.329051",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3068310545332,
+          41.339708175240965
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 107,
+        "createdOn": "2024-11-22T01:11:16.329057",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.32266251487178,
+          41.378160201149875
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 108,
+        "createdOn": "2024-11-22T01:11:16.329061",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.20969136177251,
+          41.206731963065906
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 109,
+        "createdOn": "2024-11-22T01:11:16.329066",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.22838560244797,
+          41.333777194795736
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 110,
+        "createdOn": "2024-11-22T01:11:16.329076",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.20648162298674,
+          41.39956389031803
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 111,
+        "createdOn": "2024-11-22T01:11:16.329081",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.21271986734172,
+          41.372041897972586
+        ]
+      },
+      "properties": {
         "cameraType": 1,
-        "latitude": 41.000085,
-        "longitude": 71.672579,
-        "id": 60286,
-        "createdOn": "2024-10-29T15:38:18.8350849",
+        "id": 112,
+        "createdOn": "2024-11-22T01:11:16.329085",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
     },
     {
-        "cameraType": 0,
-        "latitude": 40.871366,
-        "longitude": 69.27981,
-        "id": 84224,
-        "createdOn": "2024-10-31T18:45:21.5653211",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3949728699588,
+          41.25172427556624
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 113,
+        "createdOn": "2024-11-22T01:11:16.329087",
         "updatedOn": null,
         "deletedOn": null,
         "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.24153745220664,
+          41.3536294914286
+        ]
+      },
+      "properties": {
+        "cameraType": 1,
+        "id": 114,
+        "createdOn": "2024-11-22T01:11:16.329089",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.23767062915586,
+          41.387391920231245
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 115,
+        "createdOn": "2024-11-22T01:11:16.329092",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.29591898622004,
+          41.33354764839902
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 116,
+        "createdOn": "2024-11-22T01:11:16.329094",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.31093559806516,
+          41.33663463261637
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 117,
+        "createdOn": "2024-11-22T01:11:16.329096",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.25382174264094,
+          41.23083794670533
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 118,
+        "createdOn": "2024-11-22T01:11:16.329098",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.32241986475172,
+          41.38410301876454
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 119,
+        "createdOn": "2024-11-22T01:11:16.329101",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.25127577050183,
+          41.39749281992764
+        ]
+      },
+      "properties": {
+        "cameraType": 1,
+        "id": 120,
+        "createdOn": "2024-11-22T01:11:16.329103",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.28099583155083,
+          41.39925936603488
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 121,
+        "createdOn": "2024-11-22T01:11:16.329106",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.29016616404729,
+          41.30063080386427
+        ]
+      },
+      "properties": {
+        "cameraType": 1,
+        "id": 122,
+        "createdOn": "2024-11-22T01:11:16.329108",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.37954452297531,
+          41.357906117537105
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 123,
+        "createdOn": "2024-11-22T01:11:16.329112",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.2946364829931,
+          41.33022198488616
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 124,
+        "createdOn": "2024-11-22T01:11:16.329114",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.23543767073657,
+          41.383677653178026
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 125,
+        "createdOn": "2024-11-22T01:11:16.329116",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.26710799083835,
+          41.23836611592964
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 126,
+        "createdOn": "2024-11-22T01:11:16.329118",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.27618495063233,
+          41.386079021623104
+        ]
+      },
+      "properties": {
+        "cameraType": 1,
+        "id": 127,
+        "createdOn": "2024-11-22T01:11:16.329120",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.31897765418614,
+          41.32277448980979
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 128,
+        "createdOn": "2024-11-22T01:11:16.329123",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.32226512534751,
+          41.3225209819761
+        ]
+      },
+      "properties": {
+        "cameraType": 1,
+        "id": 129,
+        "createdOn": "2024-11-22T01:11:16.329128",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.29966957516375,
+          41.254239857198975
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 130,
+        "createdOn": "2024-11-22T01:11:16.329131",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.20109189693252,
+          41.34546522685956
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 131,
+        "createdOn": "2024-11-22T01:11:16.329133",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3358609287682,
+          41.32982716963359
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 132,
+        "createdOn": "2024-11-22T01:11:16.329135",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.28657298811784,
+          41.287941522136705
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 133,
+        "createdOn": "2024-11-22T01:11:16.329137",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3264089861639,
+          41.31651408836332
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 134,
+        "createdOn": "2024-11-22T01:11:16.329140",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.21593563484804,
+          41.30313867527909
+        ]
+      },
+      "properties": {
+        "cameraType": 1,
+        "id": 135,
+        "createdOn": "2024-11-22T01:11:16.329142",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.21889331772414,
+          41.29300649047202
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 136,
+        "createdOn": "2024-11-22T01:11:16.329144",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.34508871465744,
+          41.29079959389939
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 137,
+        "createdOn": "2024-11-22T01:11:16.329147",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.38781967058097,
+          41.39149134806059
+        ]
+      },
+      "properties": {
+        "cameraType": 1,
+        "id": 138,
+        "createdOn": "2024-11-22T01:11:16.329149",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.21299160671848,
+          41.36309261832615
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 139,
+        "createdOn": "2024-11-22T01:11:16.329228",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.28017199839073,
+          41.25357074296162
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 140,
+        "createdOn": "2024-11-22T01:11:16.329232",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.24873939247357,
+          41.33674144085598
+        ]
+      },
+      "properties": {
+        "cameraType": 1,
+        "id": 141,
+        "createdOn": "2024-11-22T01:11:16.329235",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.29447292476443,
+          41.217102678016175
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 142,
+        "createdOn": "2024-11-22T01:11:16.329237",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.25994425530126,
+          41.310787091877
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 143,
+        "createdOn": "2024-11-22T01:11:16.329240",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.31617522505448,
+          41.288410832922054
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 144,
+        "createdOn": "2024-11-22T01:11:16.329242",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.22222771005254,
+          41.383545193851816
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 145,
+        "createdOn": "2024-11-22T01:11:16.329244",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.33029532577824,
+          41.28947574388094
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 146,
+        "createdOn": "2024-11-22T01:11:16.329247",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.38299391902495,
+          41.30521347637824
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 147,
+        "createdOn": "2024-11-22T01:11:16.329253",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.25924267327028,
+          41.346128246024485
+        ]
+      },
+      "properties": {
+        "cameraType": 1,
+        "id": 148,
+        "createdOn": "2024-11-22T01:11:16.329255",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.30235683142334,
+          41.35435259580788
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 149,
+        "createdOn": "2024-11-22T01:11:16.329257",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.21313923971066,
+          41.274725195626544
+        ]
+      },
+      "properties": {
+        "cameraType": 1,
+        "id": 150,
+        "createdOn": "2024-11-22T01:11:16.329260",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3275004304457,
+          41.23460726382834
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 151,
+        "createdOn": "2024-11-22T01:11:16.329262",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.28790384474561,
+          41.27257701567777
+        ]
+      },
+      "properties": {
+        "cameraType": 1,
+        "id": 152,
+        "createdOn": "2024-11-22T01:11:16.329264",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.20059085294746,
+          41.30880237228961
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 153,
+        "createdOn": "2024-11-22T01:11:16.329268",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.27978949846691,
+          41.247876959327485
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 154,
+        "createdOn": "2024-11-22T01:11:16.329270",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.39279767592336,
+          41.2793868526669
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 155,
+        "createdOn": "2024-11-22T01:11:16.329275",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.22153223360856,
+          41.28857992168826
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 156,
+        "createdOn": "2024-11-22T01:11:16.329277",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.24735645780974,
+          41.292980916703975
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 157,
+        "createdOn": "2024-11-22T01:11:16.329279",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.32598688361233,
+          41.384552303814814
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 158,
+        "createdOn": "2024-11-22T01:11:16.329281",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.39390370913311,
+          41.200530925635185
+        ]
+      },
+      "properties": {
+        "cameraType": 1,
+        "id": 159,
+        "createdOn": "2024-11-22T01:11:16.329284",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3601385268353,
+          41.37922190865329
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 160,
+        "createdOn": "2024-11-22T01:11:16.329286",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.26652839521343,
+          41.36511284760065
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 161,
+        "createdOn": "2024-11-22T01:11:16.329288",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3064078661715,
+          41.309397353990086
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 162,
+        "createdOn": "2024-11-22T01:11:16.329290",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.21590081106793,
+          41.349014389359986
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 163,
+        "createdOn": "2024-11-22T01:11:16.329292",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.35810161016566,
+          41.226680093611165
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 164,
+        "createdOn": "2024-11-22T01:11:16.329294",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.24081667260239,
+          41.24825165671885
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 165,
+        "createdOn": "2024-11-22T01:11:16.329298",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.23092035318635,
+          41.33155009672064
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 166,
+        "createdOn": "2024-11-22T01:11:16.329300",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.34115003996737,
+          41.22831345644016
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 167,
+        "createdOn": "2024-11-22T01:11:16.329304",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.21966239282388,
+          41.21749038806019
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 168,
+        "createdOn": "2024-11-22T01:11:16.329306",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.20274538391025,
+          41.2637132614079
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 169,
+        "createdOn": "2024-11-22T01:11:16.329308",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.30979628655466,
+          41.3984462099014
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 170,
+        "createdOn": "2024-11-22T01:11:16.329311",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.21073490242502,
+          41.33654414544263
+        ]
+      },
+      "properties": {
+        "cameraType": 1,
+        "id": 171,
+        "createdOn": "2024-11-22T01:11:16.329313",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.38754872405465,
+          41.23175274599648
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 172,
+        "createdOn": "2024-11-22T01:11:16.329316",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.38263656098101,
+          41.26426258202622
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 173,
+        "createdOn": "2024-11-22T01:11:16.329318",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.20260081066311,
+          41.37278993453757
+        ]
+      },
+      "properties": {
+        "cameraType": 1,
+        "id": 174,
+        "createdOn": "2024-11-22T01:11:16.329322",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.31888624284062,
+          41.33688838633357
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 175,
+        "createdOn": "2024-11-22T01:11:16.329324",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3437833358305,
+          41.239245012791066
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 176,
+        "createdOn": "2024-11-22T01:11:16.329326",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.31659786570967,
+          41.24479931707501
+        ]
+      },
+      "properties": {
+        "cameraType": 1,
+        "id": 177,
+        "createdOn": "2024-11-22T01:11:16.329328",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.27251578172528,
+          41.35419812245203
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 178,
+        "createdOn": "2024-11-22T01:11:16.329331",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.27001001024416,
+          41.30716873115217
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 179,
+        "createdOn": "2024-11-22T01:11:16.329335",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.27223304717009,
+          41.369452490786436
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 180,
+        "createdOn": "2024-11-22T01:11:16.329337",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.24454891778983,
+          41.335061042060396
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 181,
+        "createdOn": "2024-11-22T01:11:16.329339",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.22233326453221,
+          41.26153435438638
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 182,
+        "createdOn": "2024-11-22T01:11:16.329341",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.26275489769857,
+          41.20879298344556
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 183,
+        "createdOn": "2024-11-22T01:11:16.329344",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.36298895657801,
+          41.25140482319816
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 184,
+        "createdOn": "2024-11-22T01:11:16.329349",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.29006309796806,
+          41.277479687426414
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 185,
+        "createdOn": "2024-11-22T01:11:16.329352",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.27651152957529,
+          41.22285175031754
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 186,
+        "createdOn": "2024-11-22T01:11:16.329354",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3745043832858,
+          41.25554151496013
+        ]
+      },
+      "properties": {
+        "cameraType": 1,
+        "id": 187,
+        "createdOn": "2024-11-22T01:11:16.329359",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.23856724992956,
+          41.25922564554686
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 188,
+        "createdOn": "2024-11-22T01:11:16.329361",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.22443375353303,
+          41.29443559329593
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 189,
+        "createdOn": "2024-11-22T01:11:16.329364",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.22482944317531,
+          41.34846527669639
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 190,
+        "createdOn": "2024-11-22T01:11:16.329366",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.37746126343441,
+          41.25787201287616
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 191,
+        "createdOn": "2024-11-22T01:11:16.329368",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.26203531612794,
+          41.38828187690747
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 192,
+        "createdOn": "2024-11-22T01:11:16.329370",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3275841678445,
+          41.28878697126593
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 193,
+        "createdOn": "2024-11-22T01:11:16.329372",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.27735411357916,
+          41.22775385069771
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 194,
+        "createdOn": "2024-11-22T01:11:16.329374",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.22667828427949,
+          41.33497430700214
+        ]
+      },
+      "properties": {
+        "cameraType": 5,
+        "id": 195,
+        "createdOn": "2024-11-22T01:11:16.329381",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.21949674762222,
+          41.34676915591371
+        ]
+      },
+      "properties": {
+        "cameraType": 1,
+        "id": 196,
+        "createdOn": "2024-11-22T01:11:16.329383",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.3070283322381,
+          41.24759948262223
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 197,
+        "createdOn": "2024-11-22T01:11:16.329385",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.25534352489795,
+          41.305841915635966
+        ]
+      },
+      "properties": {
+        "cameraType": 2,
+        "id": 198,
+        "createdOn": "2024-11-22T01:11:16.329388",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.30250394496709,
+          41.24829054297653
+        ]
+      },
+      "properties": {
+        "cameraType": 4,
+        "id": 199,
+        "createdOn": "2024-11-22T01:11:16.329392",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.30682639688717,
+          41.357605491148256
+        ]
+      },
+      "properties": {
+        "cameraType": 3,
+        "id": 200,
+        "createdOn": "2024-11-22T01:11:16.329394",
+        "updatedOn": null,
+        "deletedOn": null,
+        "isActive": true
+      }
     }
-]
+  ]
+}
